@@ -1,0 +1,5 @@
+{
+  "name": "Marketplace Pricing Calculator",
+  "description": "A dynamic tool to calculate product pricing, fees, and profitability across major marketplaces like Mercado Livre, Shopee, Amazon, and more. Features dynamic fee calculation, manual overrides, and the ability to save/load pricing scenarios.",
+  "requestFramePermissions": []
+}
