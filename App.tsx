@@ -22,7 +22,7 @@ const App: React.FC = () => {
         productName: '',
         sellingPrice: '',
         purchasePrice: '',
-        quantity: '',
+        quantity: '1',
         additionalCostFixed: '',
         additionalCostPercent: '',
         shippingCost: '',
