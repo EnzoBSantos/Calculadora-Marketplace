@@ -14,12 +14,12 @@ export enum MercadoLivreAdType {
 
 export interface CalculationInput {
   productName: string;
-  sellingPrice: number;
-  purchasePrice: number;
-  quantity: number;
-  additionalCostFixed: number;
-  additionalCostPercent: number;
-  shippingCost: number;
+  sellingPrice: string;
+  purchasePrice: string;
+  quantity: string;
+  additionalCostFixed: string;
+  additionalCostPercent: string;
+  shippingCost: string;
   marketplace: Marketplace;
   mercadoLivreAdType: MercadoLivreAdType;
   b2wCategory: string;

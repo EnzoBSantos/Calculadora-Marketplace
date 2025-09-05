@@ -19,13 +19,13 @@ const App: React.FC = () => {
     const [rules, setRules] = useState<MarketplaceRules>(getRules);
 
     const [input, setInput] = useState<CalculationInput>({
-        productName: 'Ex: Smartphone Modelo X',
-        sellingPrice: 100,
-        purchasePrice: 40,
-        quantity: 100,
-        additionalCostFixed: 5,
-        additionalCostPercent: 2,
-        shippingCost: 10,
+        productName: '',
+        sellingPrice: '',
+        purchasePrice: '',
+        quantity: '',
+        additionalCostFixed: '',
+        additionalCostPercent: '',
+        shippingCost: '',
         marketplace: Marketplace.MERCADO_LIVRE,
         mercadoLivreAdType: MercadoLivreAdType.CLASSICO,
         b2wCategory: 'Telefonia Fixa / Celular',
@@ -87,8 +87,7 @@ const App: React.FC = () => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        const isNumber = e.target.type === 'number';
-        setInput(prev => ({ ...prev, [name]: isNumber ? parseFloat(value) || 0 : value }));
+        setInput(prev => ({ ...prev, [name]: value }));
         
         if (name === 'marketplace') {
             setFeeOverrides({ commissionRate: null, fixedFee: null });
@@ -183,14 +182,12 @@ const App: React.FC = () => {
                                 label={`Comissão Padrão (%) - Padrão: ${formatPercent(defaultFees.commissionRate * 100)}`}
                                 value={feeOverrides.commissionRate ?? ''}
                                 onChange={handleFeeOverrideChange}
-                                placeholder="Sobrescrever"
                             />
                             <NumberInput
                                 name="fixedFee"
                                 label={`Taxa Fixa (R$) - Padrão: ${formatCurrency(defaultFees.fixedFee)}`}
                                 value={feeOverrides.fixedFee ?? ''}
                                 onChange={handleFeeOverrideChange}
-                                placeholder="Sobrescrever"
                             />
                         </div>
                     </Card>

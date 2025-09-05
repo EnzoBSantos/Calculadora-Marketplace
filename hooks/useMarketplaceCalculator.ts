@@ -22,13 +22,14 @@ export const useMarketplaceCalculator = (
     const [defaultFees, setDefaultFees] = useState({ commissionRate: 0, fixedFee: 0 });
 
     useEffect(() => {
+        const sellingPrice = parseFloat(input.sellingPrice) || 0;
+        const purchasePrice = parseFloat(input.purchasePrice) || 0;
+        const quantity = parseFloat(input.quantity) || 0;
+        const additionalCostFixed = parseFloat(input.additionalCostFixed) || 0;
+        const additionalCostPercent = parseFloat(input.additionalCostPercent) || 0;
+        const shippingCost = parseFloat(input.shippingCost) || 0;
+
         const {
-            sellingPrice,
-            purchasePrice,
-            quantity,
-            additionalCostFixed,
-            additionalCostPercent,
-            shippingCost,
             marketplace,
             mercadoLivreAdType,
             b2wCategory,
